@@ -1,0 +1,26 @@
+<div class="mb-3">
+    <label for="musicianName" class="form-label">Musician Name</label>
+    <input type="text" name="name" value="{{ musician.name }}" required="required" class="form-control" id="musicianName" />
+</div>
+
+<div class="mb-3">
+    <label for="musicianSalary" class="form-label">Musician Salary</label>
+    <input
+        type="number"
+        min="0"
+        name="salary"
+        value="{{ musician.salary }}"
+        required="required"
+        class="form-control"
+        id="musicianSalary"
+    />
+</div>
+
+<div class="mb-3">
+    <label for="musicianOrchestra" class="form-label">Select Orchestra</label>
+    <select name="orchestra" class="form-select" aria-label="Default select example" id="musicianOrchestra">
+        {% for orchestra in orchestras %}
+        <option value="{{ orchestra.pk }}">{{ orchestra.name }}</option>
+        {% endfor %}
+    </select>
+</div>

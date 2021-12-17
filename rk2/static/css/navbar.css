@@ -1,0 +1,17 @@
+.logo {
+  height: 80px;
+  border-radius: 24px;
+}
+
+body {
+  background: rgb(148, 127, 100) !important;
+}
+
+.card,
+.navbar {
+  background-color: rgb(116, 92, 77) !important;
+}
+
+.text-muted {
+  color: black !important;
+}

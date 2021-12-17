@@ -1,0 +1,12 @@
+{% extends 'inc/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">Update Musician</h1>
+</div>
+<!-- Page Content -->
+<div>
+    <form action="{% url 'update_musician' musician.pk %}" method="POST" class="form">
+        {% csrf_token %} {% include 'musician/musician_form.html' with musician=musician %}
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+{% endblock content %}

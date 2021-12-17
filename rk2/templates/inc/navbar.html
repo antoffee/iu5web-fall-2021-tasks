@@ -1,0 +1,25 @@
+{% load static %}
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-3">
+  <ul class="navbar-nav nav-tabs ml-auto">
+    <li class="nav-item">
+      <a href="{% url 'main' %}" class="nav-link">Main Page</a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'read_musician' %}" class="nav-link">All musicians</a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'create_musician' %}" class="nav-link">Create musician</a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'read_orchestra' %}" class="nav-link">All orchestras</a>
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'create_orchestra' %}" class="nav-link"
+        >Create orchestra</a
+      >
+    </li>
+    <li class="nav-item">
+      <a href="{% url 'report' %}" class="nav-link">Report</a>
+    </li>
+  </ul>
+</nav>

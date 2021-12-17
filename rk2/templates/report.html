@@ -1,0 +1,22 @@
+{% extends 'inc/base.html' %} {% load static %} {% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">Report Page</h1>
+</div>
+<!-- Page Content -->
+<div>
+    <h1>Musicians with name ends with 'ов'</h1>
+    {% for musician in found_musicians %} {% include 'musician/musician_card.html' with musician=musician %} {% endfor %}
+</div>
+
+<div>
+    <h1>Average salary</h1>
+    <div class="d-flex flex-wrap">
+        {% for avg_salary in average_salaries %}
+        <div class="d-flex flex-column align-center" >
+            <h3 class="text-center">Average salary {{ avg_salary.salary }}</h3>
+            {% include 'orchestra/orchestra_card.html' with orchestra=avg_salary.orchestra %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
