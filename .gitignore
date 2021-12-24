@@ -5,3 +5,5 @@ __pycache__
 migrations
 db.sqlite3
 data
+build
+node_modules
