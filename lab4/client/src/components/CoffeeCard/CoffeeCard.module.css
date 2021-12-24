@@ -1,0 +1,56 @@
+.container {
+    border: 1px solid black;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 32px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.container.large {
+    width: 100%;
+    border: none;
+    border-radius: 0;
+}
+
+.image {
+    height: 50%;
+    width: 100%;
+    cursor: pointer;
+}
+
+.info {
+    margin-left: 0;
+    padding: 32px;
+}
+
+.info h1 {
+    margin: 0;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    margin: 10px;
+    box-shadow: 5px 1px 5px rgb(85, 85, 85);
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .image {
+        width: 320px;
+    }
+
+    .info {
+        margin-left: 32px;
+    }
+}

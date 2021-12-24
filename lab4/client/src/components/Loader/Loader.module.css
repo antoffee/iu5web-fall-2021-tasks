@@ -1,0 +1,48 @@
+.spinner {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+
+.spinner svg {
+    fill: rgb(135, 236, 236);
+    animation: heartbeat 3s infinite linear 300ms;
+    margin: 4px;
+
+    width: 60px;
+    height: auto;
+}
+
+.spinner svg:first-child {
+    animation: heartbeat 3s infinite linear;
+}
+
+.spinner svg:last-child {
+    animation: heartbeat 3s infinite 600ms linear;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(0.75);
+        opacity: 100%;
+    }
+    20% {
+        transform: scale(1);
+    }
+    40% {
+        transform: scale(0.75);
+        opacity: 50%;
+    }
+    60% {
+        transform: scale(1);
+        opacity: 50%;
+    }
+    80% {
+        transform: scale(0.75);
+    }
+    100% {
+        transform: scale(0.75);
+        opacity: 100%;
+    }
+}
