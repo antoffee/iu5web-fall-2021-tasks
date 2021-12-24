@@ -1,0 +1,16 @@
+/.git
+/.idea
+/.vscode
+/.coverage
+/.npm-cache
+/.jest-cache
+/.gitignore
+/.gitlab
+/.dockerignore
+/.DS_Store
+/**/node_modules
+/**/build
+/**/.build-cache
+/**/dist
+/**/Dockerfile
+/docker-compose.yaml

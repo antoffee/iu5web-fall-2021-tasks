@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  ripdb:
+    image: postgres
+    container_name: ripdb
+    volumes:
+      - ./data/ripdb:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=root
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: "sh entripoint.sh"
+    volumes:
+      - "./server:/code"
+    ports:
+      - "8000:8000"
+    environment:
+      - POSTGRES_NAME=root
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    depends_on:
+      - ripdb
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - api
