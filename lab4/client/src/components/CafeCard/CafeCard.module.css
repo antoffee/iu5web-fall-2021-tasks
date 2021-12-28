@@ -1,0 +1,22 @@
+.container {
+    border: 1px solid black;
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.button {
+    margin: 10px;
+    box-shadow: 5px 1px 5px rgb(85, 85, 85);
+    border-radius: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}

@@ -8,7 +8,7 @@ import { Coffee } from 'types/coffee.types';
 
 export const ChangeCoffeePage: React.FC = () => {
     const { id } = useParams<{ id?: string }>();
-    const { cafe, coffee } = useAppContext();
+    const { cafe, coffee, setLoaded } = useAppContext();
     const history = useHistory();
 
     const coffeeItem = useMemo(() => (id ? coffee.find((item) => item.pk === Number(id)) : undefined), [coffee, id]);
@@ -17,8 +17,9 @@ export const ChangeCoffeePage: React.FC = () => {
         (values) => {
             void (coffeeItem ? fetchUpdateCoffee({ ...coffeeItem, ...values }) : fetchCreateCoffee(values));
             history.push('/');
+            setLoaded(false);
         },
-        [coffeeItem, history],
+        [coffeeItem, history, setLoaded],
     );
 
     if (id && !coffeeItem) return <div>not found</div>;
@@ -39,7 +40,7 @@ export const ChangeCoffeePage: React.FC = () => {
                         <p>Country</p>
                         <Field name="country" component="input" />
                         <p>Cafe</p>
-                        <Field name="cafe" component="select">
+                        <Field name="cafe" component="select" defaultValue={cafe[0]?.pk}>
                             {cafe.map((item) => (
                                 <option key={item.pk} value={item.pk}>
                                     {item.name}
